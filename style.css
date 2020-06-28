@@ -1,0 +1,693 @@
+:root {
+  --primary: #3bb9e3;
+  --primary-variant: #f5f8fa;
+  --secondary: #fff;
+
+  --background: #e6ecf0;
+  --surface: #fff;
+  --error: #f00;
+
+  --on-primary: #fff;
+  --on-primary-variant: #667580;
+  --on-secondary: #000;
+
+  --on-background: #1f2226;
+  --on-surface: #667580;
+  --on-error: #fff;
+
+  --box-shadow: rgba(0, 0, 0, .2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, input, button {
+  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  outline: none;
+}
+
+div.container {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 32px;
+}
+
+header#main-header {
+  height: 46px;
+  background-color: var(--surface);
+
+  box-shadow: 0 1px 1px var(--box-shadow);
+
+  position: relative;
+  z-index: 5;
+}
+
+header#main-header div.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+}
+
+header#main-header div.container img {
+  width: 16px;
+  height: 16px;
+}
+
+header#main-header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header#main-header nav ul li {
+  display: flex;
+  align-items: center;
+
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--on-surface);
+
+  cursor: pointer;
+}
+
+header#main-header nav ul li:not(:first-child) {
+  margin-left: 32px;
+}
+
+header#main-header nav ul li img {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+header#main-header > img {
+  width: 16px;
+  height: 16px;
+}
+
+header#main-header div.side {
+  display: flex;
+  align-items: center;
+}
+
+header#main-header div.side input {
+  width: 220px;
+  height: 34px;
+
+  padding: 0 32px 0 12px;
+
+  border-radius: 16px;
+
+  background: var(--primary-variant) url('images/search.svg') no-repeat 190px center;
+  border: 1px solid var(--background);
+
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--on-primary-variant);
+}
+
+header#main-header div.side input::placeholder {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--on-primary-variant);
+}
+
+header#main-header div.side img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+
+  margin-left: 16px;
+}
+
+header#main-header div.side button {
+  width: 90px;
+  height: 32px;
+  background-color: var(--primary);
+
+  margin-left: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--on-primary);
+
+  border: none;
+  border-radius: 16px;
+
+  cursor: pointer;
+}
+
+div.banner {
+  width: 100%;
+  height: 280px;
+
+  background-color: var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.banner h1 {
+  color: var(--on-primary);
+}
+
+div.bar {
+  height: 60px;
+  background-color: var(--surface);
+
+  box-shadow: 0 1px 3px var(--box-shadow);
+}
+
+div.bar div.container {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-left: 292px;
+}
+
+div.bar ul {
+  height: 100%;
+
+  display: flex;
+  list-style: none;
+}
+
+div.bar ul li,
+div.bar ul li.active {
+  height: 100%;
+
+  padding: 0 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+div.bar ul li span {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--on-surface);
+}
+
+div.bar ul li strong {
+  margin-top: 2px;
+
+  font-size: 18px;
+  color: var(--on-surface);
+}
+
+div.bar ul li.active strong {
+  color: var(--primary);
+}
+
+div.bar ul li.active::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--primary);
+}
+
+div.bar div.actions {
+  display: flex;
+  align-items: center;
+}
+
+div.bar div.actions button {
+  width: 90px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--primary);
+
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 16px;
+
+  cursor: pointer;
+}
+
+div.bar div.actions img {
+  width: 16px;
+  height: 16px;
+
+  margin-left: 16px;
+}
+
+main.wrapper-content {
+  margin-bottom: 16px;
+}
+
+main.wrapper-content div.container {
+  display: flex;
+}
+
+main.wrapper-content aside.profile {
+  width: 260px;
+}
+
+main.wrapper-content aside.profile > img {
+  width: 200px;
+  height: 200px;
+
+  border-radius: 50%;
+  border: 5px solid var(--on-primary);
+
+  margin-top: -50%;
+}
+
+main.wrapper-content aside.profile h2 {
+  font-size: 24px;
+  color: var(--on-background);
+
+  margin-top: 16px;
+}
+
+main.wrapper-content aside.profile span {
+  font-size: 14px;
+  color: var(--on-background);
+}
+
+main.wrapper-content aside.profile p {
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--on-background);
+
+  margin-top: 16px;
+}
+
+main.wrapper-content aside.profile ul {
+  margin-top: 16px;
+  list-style: none;
+}
+
+main.wrapper-content aside.profile ul li {
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--on-background);
+}
+
+main.wrapper-content aside.profile ul li img {
+  width: 16px;
+  height: 16px;
+
+  margin-right: 8px;
+}
+
+main.wrapper-content aside.profile div.widget {
+  margin-top: 16px;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+main.wrapper-content aside.profile div.widget strong {
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--primary);
+
+  display: flex;
+  align-items: center;
+}
+
+main.wrapper-content aside.profile div.widget img {
+  width: 16px;
+  height: 16px;
+
+  margin-right: 8px;
+}
+
+main.wrapper-content aside.profile div.followers ul {
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main.wrapper-content aside.profile div.followers ul li {
+  width: 44px;
+  height: 44px;
+
+  margin-top: 4px;
+  margin-right: 4px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+main.wrapper-content aside.profile div.images ul {
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main.wrapper-content aside.profile div.images ul li {
+  width: 72px;
+  height: 72px;
+
+  margin-top: 4px;
+  margin-right: 4px;
+
+  flex-shrink: 0;
+
+  background-color: #d9d9d9;
+}
+
+main.wrapper-content section.timeline {
+  flex: 1;
+
+  margin-top: 16px;
+
+  background-color: var(--surface);
+}
+
+main.wrapper-content section.timeline nav {
+  display: flex;
+  align-items: center;
+
+  padding: 8px 16px;
+
+  border-bottom: 1px solid #d9d9d9;
+}
+
+main.wrapper-content section.timeline nav a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+
+  color: var(--primary);
+}
+
+main.wrapper-content section.timeline nav a:not(:first-child) {
+  margin-left: 16px;
+}
+
+main.wrapper-content section.timeline nav a.active {
+  color: #000;
+}
+
+main.wrapper-content section.timeline > ul.tweets {
+  list-style: none;
+
+  display: inline;
+  flex-direction: column;
+}
+
+main.wrapper-content section.timeline > ul.tweets > li {
+  display: flex;
+
+  margin: 16px 16px 0;
+}
+
+main.wrapper-content section.timeline > ul.tweets > li:not(:last-child) {
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 16px;
+}
+
+main.wrapper-content section.timeline > ul.tweets > li > img {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+}
+
+main.wrapper-content section.timeline > ul.tweets > li div.info {
+  margin-left: 16px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+main.wrapper-content section.timeline > ul.tweets > li div.info strong {
+  font-size: 14px;
+  color: var(--on-surface);
+}
+
+main.wrapper-content section.timeline > ul.tweets > li div.info strong span {
+  font-size: 12px;
+  font-weight: normal;
+  color: #d9d9d9;
+
+  margin-left: 8px;
+}
+
+main.wrapper-content section.timeline > ul.tweets > li div.info p {
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--on-surface);
+
+  margin-top: 8px;
+}
+
+main.wrapper-content section.timeline > ul.tweets > li div.info div.actions > ul {
+  list-style: none;
+  margin-top: 8px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+main.wrapper-content section.timeline > ul.tweets > li div.info div.actions > ul > li {
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--on-surface);
+}
+
+main.wrapper-content section.timeline > ul.tweets > li div.info div.actions > ul > li:not(:first-child) {
+  margin-left: 32px;
+}
+
+main.wrapper-content section.timeline > ul.tweets > li div.info div.actions > ul > li > img {
+  width: 16px;
+  height: 16px;
+
+  margin-right: 8px;
+}
+
+main.wrapper-content aside.widgets {
+  width: 290px;
+}
+
+main.wrapper-content aside.widgets div.widget {
+  margin: 16px 0 0 16px;
+  padding: 16px;
+
+  background-color: var(--surface);
+}
+
+main.wrapper-content aside.widgets div.widget div.title {
+  display: flex;
+  align-items: baseline;
+}
+
+main.wrapper-content aside.widgets div.widget div.title strong {
+  font-size: 18px;
+  color: var(--on-surface);
+}
+
+main.wrapper-content aside.widgets div.widget div.title a {
+  font-size: 12px;
+  color: var(--primary);
+
+  margin-left: 16px;
+
+  text-decoration: none;
+
+  position: relative;
+}
+
+main.wrapper-content aside.widgets div.widget div.title a::before {
+  content: '';
+
+  width: 3px;
+  height: 3px;
+
+  position: absolute;
+  top: calc(50% - 1px);
+  left: -8px;
+
+  margin-right: 8px;
+
+  border-radius: 50%;
+  background-color: var(--on-surface);
+}
+
+main.wrapper-content aside.widgets div.follow ul {
+  margin-top: 16px;
+  list-style: none;
+}
+
+main.wrapper-content aside.widgets div.follow ul li {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 8px;
+}
+
+main.wrapper-content aside.widgets div.follow ul li:not(:last-child) {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+main.wrapper-content aside.widgets div.follow ul li div.profile {
+  display: flex;
+  align-items: center;
+}
+
+main.wrapper-content aside.widgets div.follow ul li div.profile img {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%
+}
+
+main.wrapper-content aside.widgets div.follow ul li div.profile div.info {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+
+  margin-left: 8px;
+}
+
+main.wrapper-content aside.widgets div.follow ul li div.profile div.info strong {
+  font-size: 14px;
+  color: var(--on-surface);
+}
+
+main.wrapper-content aside.widgets div.follow ul li div.profile div.info strong span {
+  font-size: 12px;
+  font-weight: normal;
+  color: #d9d9d9;
+
+  margin-left: 4px;
+}
+
+main.wrapper-content aside.widgets div.follow ul li div.profile div.info button {
+  width: 90px;
+  height: 24px;
+
+  margin-top: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--primary);
+
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 16px;
+
+  cursor: pointer;
+}
+
+main.wrapper-content aside.widgets div.follow ul li a {
+  font-size: 14px;
+  text-decoration: none;
+
+  align-self: start;
+
+  color: #d9d9d9;
+}
+
+main.wrapper-content aside.widgets div.widget div.title {
+  display: flex;
+  align-items: baseline;
+}
+
+main.wrapper-content aside.widgets div.widget div.title strong {
+  font-size: 18px;
+  color: var(--on-surface);
+}
+
+main.wrapper-content aside.widgets div.widget div.title a {
+  font-size: 12px;
+  color: var(--primary);
+
+  margin-left: 16px;
+
+  text-decoration: none;
+
+  position: relative;
+}
+
+main.wrapper-content aside.widgets div.trends div.title a::before {
+  content: '';
+
+  width: 3px;
+  height: 3px;
+
+  position: absolute;
+  top: calc(50% - 1px);
+  left: -8px;
+
+  margin-right: 8px;
+
+  border-radius: 50%;
+  background-color: var(--on-surface);
+}
+
+main.wrapper-content aside.widgets div.hashtags ul {
+  margin-top: 16px;
+  list-style: none;
+}
+
+main.wrapper-content aside.widgets div.hashtags ul li {
+  display: flex;
+
+  margin-top: 8px;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--primary);
+}
